@@ -1,0 +1,12 @@
+@import "./global.scss";
+
+.square__container {
+  font-size: 70px;
+  height: 100px;
+  width: 100px;
+  background-color: $pink;
+  color: $pinkish;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

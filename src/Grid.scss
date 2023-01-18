@@ -1,0 +1,9 @@
+@import "./global.scss";
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  background-color: $peach;
+  grid-gap: 8px;
+}
