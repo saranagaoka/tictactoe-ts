@@ -1,0 +1,12 @@
+@import "./global.scss";
+
+.reset {
+  top: 400px;
+  left: 150px;
+  border: 1px solid $peach;
+  background-color: $pinkish;
+  opacity: 60%;
+  color: $blue;
+  border-radius: 10px;
+  padding: 4px;
+}

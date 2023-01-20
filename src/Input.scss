@@ -1,0 +1,36 @@
+@import "./global.scss";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  top: 120px;
+  left: 150px;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  background-color: $pinkish;
+  opacity: 40%;
+  border-radius: 10px;
+  height: 24px;
+  align-items: center;
+  padding-left: 8px;
+  justify-content: center;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+input::placeholder {
+  color: $blue;
+}

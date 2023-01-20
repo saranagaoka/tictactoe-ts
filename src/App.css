@@ -1,9 +1,18 @@
 .app {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgba(249, 212, 219, 255);
   height: 100vh;
-  gap: 16px;
+  gap: 56px;
+}
+
+.middle {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  gap: 56px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0.8;
 }

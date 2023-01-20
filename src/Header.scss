@@ -3,4 +3,13 @@
 .header {
   color: $blue;
   font-size: 40px;
+  width: 100%;
+  text-align: start;
+  padding-top: 24px;
+}
+
+p {
+  margin: 0;
+  width: 100%;
+  white-space: nowrap;
 }

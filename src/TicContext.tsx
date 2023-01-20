@@ -6,19 +6,23 @@ export const TicContext = createContext<{
   setGameArr: Dispatch<SetStateAction<string[]>>;
   player: boolean;
   setPlayer: Dispatch<SetStateAction<boolean>>;
-  wasClicked: boolean;
-  setWasClicked: Dispatch<SetStateAction<boolean>>;
   winner: string;
   setWinner: Dispatch<SetStateAction<string>>;
+  namePlayerO: string;
+  setNamePlayerO: Dispatch<SetStateAction<string>>;
+  namePlayerX: string;
+  setNamePlayerX: Dispatch<SetStateAction<string>>;
 }>({
   gameArr: [],
   setGameArr: () => {},
   player: true,
   setPlayer: () => [],
-  wasClicked: false,
-  setWasClicked: () => [],
   winner: "",
   setWinner: () => [],
+  namePlayerO: "",
+  setNamePlayerO: () => [],
+  namePlayerX: "",
+  setNamePlayerX: () => [],
 });
 
 export const TicProvider = ({
@@ -28,8 +32,10 @@ export const TicProvider = ({
 }) => {
   const [gameArr, setGameArr] = useState<string[]>([...Array(9)]);
   const [player, setPlayer] = useState<boolean>(true);
-  const [wasClicked, setWasClicked] = useState<boolean>(false);
-  const [winner, setWinner] = useState("");
+  const [winner, setWinner] = useState<string>("");
+  const [namePlayerO, setNamePlayerO] = useState<string>("");
+  const [namePlayerX, setNamePlayerX] = useState<string>("");
+
   return (
     <TicContext.Provider
       value={{
@@ -37,10 +43,12 @@ export const TicProvider = ({
         setGameArr: setGameArr,
         player: player,
         setPlayer: setPlayer,
-        wasClicked: wasClicked,
-        setWasClicked: setWasClicked,
         winner: winner,
         setWinner: setWinner,
+        namePlayerO: namePlayerO,
+        setNamePlayerO: setNamePlayerO,
+        namePlayerX: namePlayerX,
+        setNamePlayerX: setNamePlayerX,
       }}
     >
       {children}

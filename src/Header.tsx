@@ -3,7 +3,15 @@ import { TicContext } from "./TicContext";
 import "./Header.scss";
 
 function Header() {
-  const { player, gameArr, winner, setWinner } = useContext(TicContext);
+  const {
+    player,
+    gameArr,
+    winner,
+    setWinner,
+    namePlayerO,
+    namePlayerX,
+    setPlayer,
+  } = useContext(TicContext);
 
   useEffect(() => {
     let endGame = true;
@@ -17,8 +25,9 @@ function Header() {
       (gameArr[0] && gameArr[0] === gameArr[4] && gameArr[4] === gameArr[8]) ||
       (gameArr[2] && gameArr[2] === gameArr[4] && gameArr[4] === gameArr[6])
     ) {
-      setWinner(player ? "x" : "o");
+      setWinner(player ? `${namePlayerO || "O"}` : `${namePlayerX || "X"}`);
     } else {
+      setPlayer((prev) => !prev);
       gameArr.forEach((el) => {
         if (!el) {
           endGame = false;
@@ -29,11 +38,15 @@ function Header() {
   }, gameArr);
   return (
     <div className="header">
-      {winner == ""
-        ? `${player ? "O" : "X"}, it's your turn!`
-        : winner == "Draw!"
-        ? "Draw!"
-        : `${winner} you won!`}
+      <p>
+        {winner
+          ? winner == "Draw!"
+            ? "Draw!"
+            : `${winner}, you won!`
+          : `${
+              player ? `${namePlayerO || "O"}` : `${namePlayerX || "X"}`
+            }, it's your turn!`}
+      </p>
     </div>
   );
 }
